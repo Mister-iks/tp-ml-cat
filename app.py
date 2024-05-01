@@ -24,7 +24,7 @@ st.write(iris_data.describe())
 st.subheader("Visualisation des données")
 fig, ax = plt.subplots()
 sns.pairplot(iris_data, hue='Species')
-st.pyplot(fig)
+plt.show()
 
 # Préparation des données
 X = iris_data.drop('Species', axis=1)
