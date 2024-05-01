@@ -8,10 +8,11 @@ from sklearn.metrics import accuracy_score, classification_report
 # Chargement des données
 iris_data = pd.read_csv('iris.csv')
 
-# Affichage des données
-st.title("Analyse de classification Iris")
+st.title("TP: Analyse de classification Iris")
+st.write("Par Ibrahima Khalilou Lahi SAMB")
 st.write("Ce projet utilise la régression logistique pour classifier les espèces d'iris.")
 
+# Affichage des données
 st.subheader("Données")
 st.write(iris_data.head())
 
