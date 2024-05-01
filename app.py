@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
+import plotly.express as px
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report
@@ -20,11 +19,10 @@ st.write(iris_data.head())
 st.subheader("Statistiques descriptives")
 st.write(iris_data.describe())
 
-# Visualisation des données
+# Visualisation des données avec Plotly
 st.subheader("Visualisation des données")
-fig, ax = plt.subplots()
-sns.pairplot(iris_data, hue='Species')
-plt.show()
+fig = px.scatter_matrix(iris_data, dimensions=['sepal_length', 'sepal_width', 'petal_length', 'petal_width'], color='Species')
+st.plotly_chart(fig)
 
 # Préparation des données
 X = iris_data.drop('Species', axis=1)
