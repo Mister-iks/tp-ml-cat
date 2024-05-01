@@ -8,6 +8,9 @@ from sklearn.metrics import accuracy_score, classification_report
 # Chargement des données
 iris_data = pd.read_csv('iris.csv')
 
+# Renommer les colonnes pour correspondre aux noms réels dans le jeu de données
+iris_data.columns = ['Sepal.Length', 'Sepal.Width', 'Petal.Length', 'Petal.Width', 'Species']
+
 # Affichage des données
 st.title("Analyse de classification Iris")
 st.write("Ce projet utilise la régression logistique pour classifier les espèces d'iris.")
@@ -21,7 +24,7 @@ st.write(iris_data.describe())
 
 # Visualisation des données avec Plotly
 st.subheader("Visualisation des données")
-fig = px.scatter_matrix(iris_data, dimensions=['sepal_length', 'sepal_width', 'petal_length', 'petal_width'], color='Species')
+fig = px.scatter_matrix(iris_data, dimensions=['Sepal.Length', 'Sepal.Width', 'Petal.Length', 'Petal.Width'], color='Species')
 st.plotly_chart(fig)
 
 # Préparation des données
